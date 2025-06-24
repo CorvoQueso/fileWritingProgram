@@ -6,6 +6,7 @@ import os
 #print(os.path.expanduser("~"))
 
 os.system('mkdir ~/Desktop/thimble')
+#ur nan
 
 #with open(os.path.expanduser("~") + "/Documents/VScode/Local/idk/readTest.txt") as fp:
 #    deez=fp.readlines() #[1]

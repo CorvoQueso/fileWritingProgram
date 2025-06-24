@@ -1,0 +1,3 @@
+cheese=brie
+bread=pitta
+onigiri=pinkOmega

@@ -5,21 +5,31 @@ import os
 
 #print(os.path.expanduser("~"))
 
-os.system('mkdir ~/Desktop/thimble')
-#ur nan
+#/Documents/VScode/githubStaging/fileWritingProgram/readTest.txt
 
-#with open(os.path.expanduser("~") + "/Documents/VScode/Local/idk/readTest.txt") as fp:
-#    deez=fp.readlines() #[1]
-#    print(deez)
-#    for i, line in enumerate(deez):
-#        if 'string' in line:
-#            deez.insert(i,"i met bro in a coffee shop")
-#    fp.seek(3)
-#    fp.writelines(deez)
+#os.system('echo hello')
 
+#os.system('sed -i "s/bread=pitta/bread=garlic/g" /home/corvo/Desktop/readTest.txt')
 
+# sed -i 's/STRING_TO_REPLACE/STRING_TO_REPLACE_IT/g' filename -WORKS!!!
 
-#with open(mode='a', file=os.path.expanduser("~") + "/Documents/VScode/local/idk/readTest.txt") as ch:
-#    ch.seek(3)
-#    onions=ch.writelines("wadahel")
-#    ch.close
+# variable.strip() removes any newline characters
+
+textFileDir = (os.path.expanduser("~") + "/Documents/VScode/githubStaging/fileWritingProgram/readTest.txt")
+
+toggleOne = "cheese=brie"
+toggleTwo = "cheese=cheddar"
+
+with open(textFileDir) as fp:
+    deez=fp.readlines()[0]
+    print(deez)
+    if (deez.strip() == toggleOne):
+        print("ur nan")
+        os.system('sed -i "s/' + toggleOne + '/' + toggleTwo + '/g" ' + textFileDir)
+        print(deez)
+    if (deez.strip() == toggleTwo):
+        print("jello")
+        os.system('sed -i "s/' + toggleTwo + '/' + toggleOne + '/g" ' + textFileDir)
+        print(deez)
+    else:
+        print("something went wrong lul")
